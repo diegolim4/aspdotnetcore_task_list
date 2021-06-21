@@ -12,6 +12,7 @@ using Tarefas.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Tarefas.Services;
 
 namespace Tarefas
 {
@@ -35,6 +36,10 @@ namespace Tarefas
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
+
+            //Registar o service
+            services.AddTransient<ITaskItemService, TempTaskItemService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
