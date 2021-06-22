@@ -1,4 +1,6 @@
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Tarefas.Models;
 using Tarefas.Services;
 
 namespace Tarefas.Controllers
@@ -16,10 +18,15 @@ namespace Tarefas.Controllers
 
 
         //método actions index para retorna lista de tarefas
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {   
-            var tasks = _taskService.GetItemAsync();            
-            return View(tasks);
+            var tasks = await _taskService.GetItemAsync();
+
+            var model = new TaskViewModel();            
+            {
+                model.TasksItens = tasks;
+            }
+            return View(model);
         }
     }
 }
