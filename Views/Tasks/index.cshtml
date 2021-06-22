@@ -9,21 +9,21 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <td>&#x2714;</td>
+                <td>&#x271;</td>
                 <td>Tarefas</td>
                 <td>Previsão</td>
             </tr>
         </thead>
-    
+
         @foreach (var item in Model.TasksItens)
         {
-        <tr>
-            <td>
-                <input type="checkbox" name="@item.Id" value="true" class="done-checkbox">
-            </td>
-            <td>@item.Name</td>
-            <td>@item.Dataconclusion</td>
-        </tr>        
+            <tr>
+                <td>
+                    <input type="checkbox" name="@item.Id" value="true" class="done-checkbox">
+                </td>
+                <td>@item.Name</td>
+                <td>@item.Dataconclusion</td>
+            </tr>
         }
     </table>
 
@@ -35,4 +35,4 @@
             <button type="button" id="add-item-button">Incluir</button>
         </form>
     </div>
-</div>    
+</div>

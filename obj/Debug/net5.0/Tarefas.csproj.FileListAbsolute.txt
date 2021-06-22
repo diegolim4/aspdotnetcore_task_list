@@ -80,3 +80,4 @@ C:\Users\Diego\DotNet_Revisao\aspdotnetcore(minicurso)\Tarefas\obj\Debug\net5.0\
 C:\Users\Diego\DotNet_Revisao\aspdotnetcore(minicurso)\Tarefas\obj\Debug\net5.0\ref\Tarefas.dll
 C:\Users\Diego\DotNet_Revisao\aspdotnetcore(minicurso)\Tarefas\obj\Debug\net5.0\Tarefas.pdb
 C:\Users\Diego\DotNet_Revisao\aspdotnetcore(minicurso)\Tarefas\obj\Debug\net5.0\Tarefas.genruntimeconfig.cache
+C:\Users\Diego\DotNet_Revisao\aspdotnetcore(minicurso)\Tarefas\obj\Debug\net5.0\Razor\Views\Tasks\index.cshtml.g.cs
