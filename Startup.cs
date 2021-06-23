@@ -29,10 +29,13 @@ namespace Tarefas
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var connectionString ="server=127.0.0.1;user=root;password=amocafe;database=tarefs";
+            var serverVersion = new MySqlServerVersion(new Version(8, 0, 22));
+
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseMySQL(
-                    Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDatabaseDeveloperPageExceptionFilter();
+                options.UseMySql(connectionString, serverVersion)
+                        .EnableSensitiveDataLogging() 
+                        .EnableDetailedErrors()); 
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
