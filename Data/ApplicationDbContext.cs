@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Tarefas.Models;
 
 namespace Tarefas.Data
 {
@@ -12,5 +13,8 @@ namespace Tarefas.Data
             : base(options)
         {
         }
+        
+        //definir o Dbset
+        public DbSet<TaskItem> Tarefas {get; set;}
     }
 }
