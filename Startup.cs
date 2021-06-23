@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Tarefas.Services;
+using MySql.Data.MySqlClient;
 
 namespace Tarefas
 {
@@ -29,7 +30,7 @@ namespace Tarefas
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlite(
+                options.UseMySQL(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -37,7 +38,7 @@ namespace Tarefas
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
 
-            //Registar o service
+            //Registrar o service
             services.AddTransient<ITaskItemService, TempTaskItemService>();
 
         }
